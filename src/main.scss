@@ -80,7 +80,7 @@ select {
 .CreateQuiz {
   .underline {
     border: 3px solid black;
-    max-width: 800px;
+    max-width: 100%;
     margin: 20px;
   }
 }
@@ -88,7 +88,7 @@ select {
 .LandingPage {
   .underline {
     border: 3px solid black;
-    max-width: 800px;
+    max-width: 100%;
     margin: 20px;
   }
 }
@@ -158,19 +158,3 @@ select {
   }
 }
 
-
-/*
-      <div className="LandingPage">
-        <div className='welcome'>
-          <h1>Welcome to QuizTown</h1>
-        </div>
-        <div className='create-quiz'>
-          <h2>Create A Quiz</h2>
-          <img src='/hammer.png' styles={ 'width: 200px'} />
-        </div>
-        <div className='take-quiz'>
-          <h2>Take A Quiz</h2>
-          <img src='/pencil.png' />
-        </div>
-      </div>
-      */
