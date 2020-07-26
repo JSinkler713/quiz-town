@@ -1,0 +1,176 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.CreateQuiz {
+  .underline {
+    border: 3px solid black;
+    max-width: 800px;
+    margin: 20px;
+  }
+}
+
+.LandingPage {
+  .underline {
+    border: 3px solid black;
+    max-width: 800px;
+    margin: 20px;
+  }
+}
+
+.main-content {
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  display: flex;
+  flex-direction: row;
+  align-content:center;
+  height: 60vh;
+  margin: 50px 3%;
+}
+
+.welcome {
+  background-color: white;
+  width: 30vw;
+  h1 {
+    font-size: 48px;
+    text-align: center; 
+  }
+}
+.create-quiz {
+  width: 30vw;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  img {
+    width: 200px;
+  }
+  .underline {
+    border: 3px solid black;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    width:200px;
+    transition: all .3s ease-in-out;
+  }
+  h2 {
+    transition: all .3s ease-in-out;
+  }
+  h2:hover, { 
+    transform: scale(1.1);
+  }
+}
+
+.take-quiz {
+  width: 30vw;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  img {
+    width: 200px;
+  }
+  .underline {
+    border: 3px solid black;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    width:200px;
+  }
+  h2 {
+    transition: all .3s ease-in-out;
+  }
+  h2:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+/*
+      <div className="LandingPage">
+        <div className='welcome'>
+          <h1>Welcome to QuizTown</h1>
+        </div>
+        <div className='create-quiz'>
+          <h2>Create A Quiz</h2>
+          <img src='/hammer.png' styles={ 'width: 200px'} />
+        </div>
+        <div className='take-quiz'>
+          <h2>Take A Quiz</h2>
+          <img src='/pencil.png' />
+        </div>
+      </div>
+      */
