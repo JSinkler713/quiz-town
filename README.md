@@ -1,4 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Quiz-Town
+
+## Summary
+A react app frontend, with a mongodb and express backend. This app allows users to create quizzes and take quizzes.
+
+### Wireframes
+Below is a mock-up wirefram of most of the screens. Using Figma, the design was layed out with prototyping between pages.
+
+![wireframes mock-up](https://github.com/JSinkler713/quiz-town/blob/master/public/prototype.png)
 
 ## Available Scripts
 
