@@ -83,6 +83,23 @@ select {
     max-width: 100%;
     margin: 20px;
   }
+  input {
+    width: 100%;
+  }
+  .img-and-build {
+    margin: 5px;
+    display: flex;
+    width: 100%;
+    align-content: space-between;
+    img {
+      width: 36px;
+      margin: 3px;
+    }
+    button {
+      flex-grow: 2;
+      margin: 3px 0 3px 3px;
+    }
+  }
 }
 
 .LandingPage {

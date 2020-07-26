@@ -9,6 +9,7 @@ import '../main.scss'
 
 
 function CreateQuiz() {
+  const handleChange = ()=> 'hey'
   return (
       <div className="CreateQuiz">
         <div className='main-content'>
@@ -17,18 +18,18 @@ function CreateQuiz() {
             <h1>Time</h1>
           </div>
           <div className='create-quiz'>
-            <Link to='/create'>
-              <h2>Create A Quiz</h2>
-            </Link>
-            <div className='underline'></div>
-            <img src='/hammer.png' styles={ 'width: 200px'} />
+            <img src='/hammer.png' />
           </div>
-          <div className='take-quiz'>
-            <Link to='/take'>
-              <h2>Take A Quiz</h2>
-            </Link>
+          <div className='create-quiz'>
+            <h3>Create A Quiz</h3>
             <div className='underline'></div>
-            <img src='/pencil.png' />
+            <div className='input-container'> 
+              <input className='quizName' onChange={handleChange} placeholder='Quiz Name'></input>
+            </div>
+            <div className='img-and-build'>
+                <img src='/hammer.png' />
+                <button>Build</button>
+            </div>
           </div>
         </div>
           <div className='underline'></div>
