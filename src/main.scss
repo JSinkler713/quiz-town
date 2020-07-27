@@ -77,6 +77,14 @@ select {
   }
 }
 
+.TakeQuiz {
+  .underline {
+    border: 3px solid black;
+    max-width: 100%;
+    margin: 20px;
+  }
+}
+
 .CreateQuiz {
   .underline {
     border: 3px solid black;
