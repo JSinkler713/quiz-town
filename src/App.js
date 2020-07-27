@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import LandingPage from './components/LandingPage.js';
 import CreateQuiz from './components/CreateQuiz.js';
+import TakeQuiz from './components/TakeQuiz.js';
 import './App.css';
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
         </Route >
         <Route path="/create" >
           <CreateQuiz />
+        </Route>
+        <Route path="/take" >
+          <TakeQuiz />
         </Route>
       </Switch>
     </Router>
