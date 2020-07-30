@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import QuizModel from '../models/quiz';
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,7 +10,18 @@ import '../main.scss'
 
 
 function CreateQuiz() {
-  const handleChange = ()=> 'hey'
+  const [quizName, setQuizName] = useState('')
+  const [realQuiz, setRealQuiz] = useState('')
+
+  function handleChange(e) {
+    setQuizName(e.target.value);
+  }
+  async function createQuiz(e) {
+    await e.preventDefault()
+    await console.log('click submit with value', quizName)
+    const createdQuiz = await QuizModel.create(quizName)
+  }
+
   return (
       <div className="CreateQuiz">
         <div className='main-content'>
@@ -23,13 +35,15 @@ function CreateQuiz() {
           <div className='create-quiz'>
             <h3>Create A Quiz</h3>
             <div className='underline'></div>
-            <div className='input-container'> 
-              <input className='quizName' onChange={handleChange} placeholder='Quiz Name'></input>
-            </div>
-            <div className='img-and-build'>
-                <img src='/hammer.png' />
-                <button>Build</button>
-            </div>
+            <form>
+              <div className='input-container'> 
+                <input className='quizName' onChange={handleChange} placeholder='Quiz Name'></input>
+                </div>
+              <div className='img-and-build'>
+                  <img src='/hammer.png' />
+                  <button onClick={createQuiz}>Bill</button>
+              </div>
+            </form>
           </div>
         </div>
           <div className='underline'></div>
