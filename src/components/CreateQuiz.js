@@ -17,9 +17,11 @@ function CreateQuiz() {
     setQuizName(e.target.value);
   }
   async function createQuiz(e) {
-    await e.preventDefault()
-    await console.log('click submit with value', quizName)
-    const createdQuiz = await QuizModel.create(quizName)
+    e.preventDefault()
+    console.log('click submit with value', quizName)
+    const Quiz = await Promise.resolve(QuizModel.create(quizName))
+    await console.log(Quiz)
+    await setRealQuiz(Quiz)
   }
 
   return (
