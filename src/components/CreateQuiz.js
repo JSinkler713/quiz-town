@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import QuizModel from '../models/quiz';
+import Modal from 'react-modal';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,6 +13,7 @@ import '../main.scss'
 function CreateQuiz() {
   const [quizName, setQuizName] = useState('')
   const [realQuiz, setRealQuiz] = useState('')
+  const [show, setShow] = useState(false)
 
   function handleChange(e) {
     setQuizName(e.target.value);
@@ -23,6 +25,14 @@ function CreateQuiz() {
     await console.log(Quiz)
     await setRealQuiz(Quiz)
   }
+
+  useEffect(()=> {
+    if (realQuiz && !show) {
+      setShow(true)
+    }
+  })
+
+  Modal.setAppElement(document.getElementById('root'));
 
   return (
       <div className="CreateQuiz">
@@ -50,7 +60,15 @@ function CreateQuiz() {
         </div>
           <div className='underline'></div>
           <div className='underline'></div>
-      </div>
+        <Modal isOpen={show} >
+          <h2>Hey Let's get building on your QUIZ</h2>
+          <h3>Quiz: {quizName}</h3>
+          <Link>
+
+          </Link>
+        </Modal>
+    </div>
+
   );
 }
 
