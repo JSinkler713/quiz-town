@@ -144,6 +144,7 @@ select {
 
 .welcome {
   background-color: white;
+  font-family: 'Chonburi', cursive;
   width: 30vw;
   h1 {
     font-size: 48px;
@@ -196,5 +197,51 @@ select {
   h2:hover {
     transform: scale(1.1);
   }
+}
+
+.ReactModalPortal {
+  a {
+    text-decoration: underline;
+    color: black;
+  }
+  h3 {
+    font-family: 'Chonburi', cursive;
+  }
+}
+
+.CreateQuizQuestions {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  flex-direction: column;
+  .header {
+    display:flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  h1 {
+    display: inline-block;
+    width: fit-content;
+    font-family: 'Chonburi', cursive;
+    text-decoration: underline;
+    line-height: 50px;
+    margin-top: 25px;
+  }
+  img {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+  .question {
+    display: flex;
+  }
+  .answers-container {
+    .answer {
+      display: flex;
+      .wrong-right {
+        display: flex;
+      }
+    }
+  };
+
 }
 
