@@ -53,7 +53,7 @@ function CreateQuiz() {
                 </div>
               <div className='img-and-build'>
                   <img src='/hammer.png' />
-                  <button onClick={createQuiz}>Bill</button>
+                  <button onClick={createQuiz}>Build</button>
               </div>
             </form>
           </div>
@@ -61,10 +61,14 @@ function CreateQuiz() {
           <div className='underline'></div>
           <div className='underline'></div>
         <Modal isOpen={show} >
-          <h2>Hey Let's get building on your QUIZ</h2>
-          <h3>Quiz: {quizName}</h3>
-          <Link>
-
+          <h3>{quizName}</h3>
+          <Link to={{
+            pathname: '/create/questions',
+            state: {
+              quiz: realQuiz
+              }
+            }}>
+            <h4>Add Questions</h4>
           </Link>
         </Modal>
     </div>
