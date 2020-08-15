@@ -9,6 +9,7 @@ import LandingPage from './components/LandingPage.js';
 import CreateQuiz from './components/CreateQuiz.js';
 import CreateQuizQuestions from './components/CreateQuizQuestions.js';
 import TakeQuiz from './components/TakeQuiz.js';
+import Quiz from './components/Quiz.js'
 import './App.css';
 
 function App() {
@@ -23,9 +24,11 @@ function App() {
         <Route path="/create" >
           <CreateQuiz />
         </Route>
-        <Route path="/take" >
+        <Route exact path="/take" >
           <TakeQuiz />
         </Route>
+        <Route path='/take/:id' render={(props)=> 
+          <Quiz {...props} />} />
       </Switch>
     </Router>
   );
