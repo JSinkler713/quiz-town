@@ -13,6 +13,11 @@ class QuizModel {
     response = await response.json()
     return response
   }
+  static getAll = async()=> {
+    let quizzes = await fetch(`${url}/quiz`)
+    quizzes = await quizzes.json()
+    return quizzes
+  }
 }
         
 export default QuizModel
