@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import QuizModel from '../models/quiz';
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,7 +10,31 @@ import '../main.scss'
 
 
 function TakeQuiz() {
-  const handleChange = ()=> 'hey'
+  const [quizzes, setQuizzes] = useState([])
+  const [values, setValues] = useState(undefined)
+  const fetchAll = async()=> {
+    const quizResponse = await Promise.resolve(QuizModel.getAll())
+    await setQuizzes(quizResponse.quizzes) 
+  }
+  
+  useEffect(()=> {
+    document.querySelector('#pencil').classList.toggle('hidden')
+    let tempValues = quizzes.map((quiz, i)=> {
+      return(
+        <Link to={{
+          pathname: `/take/${quiz._id}`,
+          state: {
+            quiz: quiz
+          }
+        }}>
+        <h4>{quiz.name}</h4>
+      </Link>
+      ) 
+    })
+    setValues(tempValues)
+    document.querySelector('#quizValues').classList.toggle('hidden')
+  }, [quizzes])
+
   return (
       <div className="TakeQuiz">
         <div className='main-content'>
@@ -21,14 +46,17 @@ function TakeQuiz() {
             <h3>Take A Quiz</h3>
             <div className='underline'></div>
             <div className='input-container'> 
-              <input className='quizName' onChange={handleChange} placeholder='Quiz Name'></input>
+              <input className='quizName'  placeholder='Quiz Name'></input>
             </div>
             <div className='img-and-build'>
-              <button>Search</button>
+              <button onClick={fetchAll}>Search</button>
             </div>
           </div>
           <div className='create-quiz'>
-            <img src='/pencil.png' />
+            <img id='pencil' src='/pencil.png' className='hidden'/>
+            <div id='quizValues'>
+              { quizzes.length > 0 ? values : ''}
+            </div>
           </div>
         </div>
           <div className='underline'></div>
