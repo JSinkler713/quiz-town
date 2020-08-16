@@ -146,13 +146,12 @@ function CreateQuizQuestions(props) {
     if (count === 1) {
       console.log('it is ready to be uploaded')
       setShow(true)
+      const Question = await Promise.resolve(QuestionModel.create(questionObject))
+      await console.log(Question)
 
     } else {
       console.log('choose One true answer')
     }
-    const Question = await Promise.resolve(QuestionModel.create(questionObject))
-    await console.log(Question)
-
   }
         
   const resetFields = ()=> {
