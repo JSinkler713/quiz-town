@@ -18,6 +18,16 @@ class QuizModel {
     quizzes = await quizzes.json()
     return quizzes
   }
+  static searchQuizzes= async(input)=> {
+    try {
+      let quizzes = await fetch(`${url}/quiz/search/${input}`)
+      quizzes  = await quizzes.json()
+      return quizzes
+
+    } catch (err) {
+      console.log('error finding quizzes with that search', err);
+    }
+  }
 }
         
 export default QuizModel
