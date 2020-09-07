@@ -11,10 +11,24 @@ import '../main.scss'
 
 function TakeQuiz() {
   const [quizzes, setQuizzes] = useState([])
+  const [input, setInput] = useState('')
+  const [hidden, hidePencil] = useState(false)
+
+  const handleInput = (e)=> {
+    console.log(e.target.value)
+     setInput(e.target.value)
+  }
+
   const [values, setValues] = useState(undefined)
+
   const fetchAll = async()=> {
     const quizResponse = await Promise.resolve(QuizModel.getAll())
     await setQuizzes(quizResponse.quizzes) 
+  }
+  const fetchByName = async()=> {
+    const quizResponse = await Promise.resolve(QuizModel.searchQuizzes(input))
+    await setQuizzes(quizResponse.quizzes)
+    await hidePencil('true')
   }
   
   useEffect(()=> {
@@ -32,7 +46,6 @@ function TakeQuiz() {
       ) 
     })
     setValues(tempValues)
-    document.querySelector('#quizValues').classList.toggle('hidden')
   }, [quizzes])
 
   return (
@@ -46,14 +59,14 @@ function TakeQuiz() {
             <h3>Take A Quiz</h3>
             <div className='underline'></div>
             <div className='input-container'> 
-              <input className='quizName'  placeholder='Quiz Name'></input>
+              <input className='quizName'  value={input} onChange={handleInput} ></input>
             </div>
             <div className='img-and-build'>
-              <button onClick={fetchAll}>Search</button>
+              <button onClick={fetchByName}>Search</button>
             </div>
           </div>
           <div className='create-quiz'>
-            <img id='pencil' src='/pencil.png' className='hidden'/>
+            <img id='pencil' src='/pencil.png' className={ hidden ?'hidden': ''} />
             <div id='quizValues'>
               { quizzes.length > 0 ? values : ''}
             </div>
