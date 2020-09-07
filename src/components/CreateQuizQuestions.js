@@ -193,39 +193,43 @@ function CreateQuizQuestions(props) {
 
         <div className='answers-container'>
           <div className='answer'> 
-            <h3> A:</h3>
+            <h2> A:</h2>
             <input id='answer1' className='answer' onChange={handleChange} placeholder='write your answer here'></input>
             <div className='wrong-right'>
-                <img id='answer1Correct' src='/checkmark.png' onClick={handleTrueClick} />
-                <img id='answer1Wrong' src='/cross.png' onClick={handleFalseClick} />
+                <img id='answer1Correct' className={answer1.correct ? 'correct' : ''} src='/checkmark.png' onClick={handleTrueClick} />
+                <img id='answer1Wrong' className={answer1.correct ? '' : 'false'} src='/cross.png' onClick={handleFalseClick} />
             </div>
           </div>
           <div className='answer'> 
-            <h3> A:</h3>
+            <h2> A:</h2>
             <input id='answer2' className='answer' onChange={handleChange} placeholder='write your answer here'></input>
             <div className='wrong-right'>
-                <img id='answer2Correct' src='/checkmark.png' onClick={handleTrueClick} />
-                <img id='answer2Wrong' src='/cross.png' onClick={handleFalseClick} />
+                <img id='answer2Correct' className={answer2.correct ? 'correct' : ''} src='/checkmark.png' onClick={handleTrueClick} />
+                <img id='answer2Wrong' className={answer2.correct ? '' : 'false'} src='/cross.png' onClick={handleFalseClick} />
             </div>
           </div>
           <div className='answer'> 
-            <h3> A:</h3>
+            <h2> A:</h2>
             <input  id='answer3' className='answer' onChange={handleChange} placeholder='write your answer here'></input>
             <div className='wrong-right'>
-                <img id='answer3Correct' src='/checkmark.png' onClick={handleTrueClick} />
-                <img id='answer3Wrong' src='/cross.png' onClick={handleFalseClick} />
+                <img id='answer3Correct'  className={answer3.correct ? 'correct' : ''} src='/checkmark.png' onClick={handleTrueClick} />
+                <img id='answer3Wrong' className={answer3.correct ? '' : 'false'} src='/cross.png' onClick={handleFalseClick} />
             </div>
           </div>
           <div className='answer'> 
-            <h3> A:</h3>
+            <h2> A:</h2>
             <input  id='answer4' className='answer' onChange={handleChange} placeholder='write your answer here'></input>
             <div className='wrong-right'>
-                <img id='answer4Correct' src='/checkmark.png' onClick={handleTrueClick} />
-                <img id='answer4Wrong' src='/cross.png' onClick={handleFalseClick} />
+                <img id='answer4Correct'  className={answer4.correct ? 'correct' : ''} src='/checkmark.png' onClick={handleTrueClick} />
+                <img id='answer4Wrong' className={answer4.correct ? '' : 'false'} src='/cross.png' onClick={handleFalseClick} />
             </div>
           </div>
         </div>
-          <button onClick={createQuestion} />
+        <div className='submit-question'>
+          <button onClick={createQuestion}>
+            Submit Question
+          </button>
+        </div>
         </form>
         <Modal isOpen={show} >
           <h2>Adding your question</h2>
